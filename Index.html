@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>A Jornada Mística</title>
+</head>
+<body>
+
+  <!-- Tela Inicial / Capa -->
+  <div id="tela-inicial">
+    <h1>A Jornada Mística</h1>
+    <button onclick="iniciarAventura()">Iniciar</button>
+  </div>
+
+  <!-- Conteúdo da Aventura e Mensagem Final -->
+  <div id="jogo" style="display: none;">
+    <h2>Aventura em Curso</h2>
+    <p>Chegaste ao fim da jornada!</p>
+    
+    <!-- Div onde a mensagem sorteada vai aparecer -->
+    <div id="div-final"></div>
+  </div>
+
+  <script>
+    function iniciarAventura() {
+      // Esconde a capa e mostra o jogo
+      document.getElementById('tela-inicial').style.display = 'none';
+      document.getElementById('jogo').style.display = 'block';
+
+      // Sortear a mensagem final de encerramento
+      const mensagensFinais = [
+        "A aventura chegou ao fim, mas o mistério apenas começou...",
+        "Parabéns! Conseguiste ultrapassar todos os desafios com sucesso!",
+        "A tua escolha mudou o rumo da história para sempre!"
+      ];
+
+      const indiceAleatorio = Math.floor(Math.random() * mensagensFinais.length);
+      document.getElementById('div-final').textContent = mensagensFinais[indiceAleatorio];
+    }
+  </script>
+
+</body>
+</html>
